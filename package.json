@@ -1,0 +1,20 @@
+{
+  "name": "currencies-map",
+  "version": "0.0.1",
+  "description": "Currency codes to names map",
+  "main": "index.ts",
+  "author": "carlosvin@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "jest": "^24.9.0",
+    "parcel-bundler": "^1.12.4",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.2"
+  },
+  "scripts": {
+    "build": "tsc --project ./tsconfig.json",
+    "test": "jest",
+    "testWithCoverage": "jest --coverage"
+  }
+}
