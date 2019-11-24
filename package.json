@@ -3,9 +3,9 @@
   "version": "2.0.2",
   "description": "Map from currency codes to currency names and symbols",
   "main": "./dist/index.js",
-  "types": "/dist/index.ts.d",
+  "types": "./dist/index.ts.d",
   "files": [
-    "/dist"
+    "./dist"
   ],
   "author": "carlosvin@gmail.com",
   "license": "MIT",
