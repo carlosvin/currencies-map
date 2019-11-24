@@ -1,11 +1,18 @@
 {
   "name": "currencies-map",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Map from currency codes to currency names and symbols",
   "main": "index.ts",
   "author": "carlosvin@gmail.com",
   "license": "MIT",
-  "keywords": ["currency", "currencies", "localization", "symbol", "code", "internationalization"],
+  "keywords": [
+    "currency",
+    "currencies",
+    "localization",
+    "symbol",
+    "code",
+    "internationalization"
+  ],
   "devDependencies": {
     "@types/jest": "^24.0.23",
     "jest": "^24.9.0",
