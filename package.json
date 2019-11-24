@@ -14,7 +14,7 @@
     "typescript": "^3.7.2"
   },
   "scripts": {
-    "build": "tsc --project ./tsconfig.json && terser ./dist/index.js -c -o ./dist/index.min.js",
+    "build": "tsc --project ./tsconfig.json && terser ./dist/index.js -c -m -o ./dist/index.min.js",
     "test": "jest",
     "testWithCoverage": "jest --coverage"
   }
