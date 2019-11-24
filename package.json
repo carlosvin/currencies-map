@@ -1,6 +1,6 @@
 {
   "name": "currencies-map",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Map from currency codes to currency names and symbols",
   "main": "index.ts",
   "author": "carlosvin@gmail.com",
