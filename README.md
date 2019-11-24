@@ -1,6 +1,8 @@
 # Currencies Map
 Currency codes mapping to currency names and symbols using native javascript API to get local currency names and symbols.
 
+[![alt text](https://badgen.net/bundlephobia/minzip/currencies-map "Bundle size")](https://bundlephobia.com/result?p=currencies-map)
+
 It contains type declarations for Typescript.
 
 It uses `navigator.language` to show the correct currency symbol or name.
