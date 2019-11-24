@@ -22,10 +22,10 @@ export class Currencies {
      * @param code Three letters currency ISO code
      * @returns currency representation: name or symbol depending on instance configuration
      */
-    getName(code: string) {
+    get(code: string) {
         let name = this._map.get(code);
         if (name === undefined) {
-            name = this._getName(code);
+            name = this._get(code);
             this._map.set(code, name);
         }
         return name;
@@ -34,11 +34,11 @@ export class Currencies {
     /**
      * @returns list of currency symbols or names depending on how instance was configured
      */
-    get names() {
-        return Currencies.codes.map(c => this.getName(c));
+    get all() {
+        return Currencies.codes.map(c => this.get(c));
     }
 
-    private _getName(currency: string) {
+    private _get(currency: string) {
         const num = Number(0);
         const currencyNumber = num.toLocaleString(
             navigator.language,

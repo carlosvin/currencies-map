@@ -32,7 +32,7 @@ import {Currencies} from 'currencies-map';
 ```javascript
 const currencies = new Currencies('name');
 const currencyCode = 'EUR';
-console.info(currencyCode + ': ' + currencies.getName(currencyCode));
+console.info(currencyCode + ': ' + currencies.get(currencyCode));
 ```
 Output (device language es-ES)
 ```javascript
@@ -43,7 +43,7 @@ Output (device language es-ES)
 ```javascript
 const currencies = new Currencies('symbol');
 const currencyCode = 'EUR';
-console.info(currencyCode + ': ' + currencies.getName(currencyCode));
+console.info(currencyCode + ': ' + currencies.get(currencyCode));
 ```
 Output
 ```javascript
@@ -53,7 +53,7 @@ Output
 ## List all names
 ```javascript
 const currencies = new Currencies('name');
-console.info(currencies.names);
+console.info(currencies.all);
 ```
 Output (device language es-ES)
 ```javascript
@@ -63,7 +63,7 @@ Output (device language es-ES)
 ## List all symbols
 ```javascript
 const currencies = new Currencies('symbol');
-console.info(currencies.names);
+console.info(currencies.all);
 ```
 Output
 ```javascript
