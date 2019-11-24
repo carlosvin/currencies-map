@@ -7,37 +7,37 @@ beforeEach(() => {
 })
 
 test('Euro symbol en-GB', () => {
-    languageGetter.mockReturnValue('en-GB')
+    languageGetter.mockReturnValue('en-GB');
     const cs = new Currencies('symbol');
     expect(cs.get('EUR')).toStrictEqual('€');
 });
 
 test('Myanmar kyats name es-ES', () => {
-    languageGetter.mockReturnValue('es-ES')
+    languageGetter.mockReturnValue('es-ES');
     const cs = new Currencies('name');
     expect(cs.get('MMK')).toStrictEqual('kiats');
 });
 
 test('Myanmar kyats name en-GB', () => {
-    languageGetter.mockReturnValue('en-GB')
+    languageGetter.mockReturnValue('en-GB');
     const cs = new Currencies('name');
     expect(cs.get('MMK')).toStrictEqual('Myanmar kyats');
 });
 
 test('USD name and symbol es-ES', () => {
-    languageGetter.mockReturnValue('es-ES')
+    languageGetter.mockReturnValue('es-ES');
     expect(new Currencies('name').get('USD')).toStrictEqual('dólares estadounidenses');
     expect(new Currencies('symbol').get('USD')).toStrictEqual('US$');
 });
 
 test('Load all names', () => {
-    languageGetter.mockReturnValue('es-ES')
-    expect(new Currencies('name').all).toStrictEqual(currencyNames);
+    languageGetter.mockReturnValue('es-ES');
+    expect([...new Currencies('name').values()]).toStrictEqual(currencyNames);
 });
 
 test('Load all symbols', () => {
-    languageGetter.mockReturnValue('es-ES')
-    expect(new Currencies('symbol').all).toStrictEqual(currencySymbols);
+    languageGetter.mockReturnValue('es-ES');
+    expect([...new Currencies('symbol').values()]).toStrictEqual(currencySymbols);
 });
 
 const currencySymbols = ["BDT",
