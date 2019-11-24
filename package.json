@@ -5,6 +5,7 @@
   "main": "index.ts",
   "author": "carlosvin@gmail.com",
   "license": "MIT",
+  "homepage": "https://github.com/carlosvin/currencies-map",
   "keywords": [
     "currency",
     "currencies",
