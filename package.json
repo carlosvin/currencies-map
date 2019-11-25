@@ -1,11 +1,15 @@
 {
   "name": "currencies-map",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Map from currency codes to currency names and symbols",
   "main": "./dist/index.js",
   "types": "./dist/index.ts.d",
-  "directories": {"lib": "./dist"},
-  "files": ["./dist"],
+  "directories": {
+    "lib": "./dist"
+  },
+  "files": [
+    "./dist"
+  ],
   "author": "carlosvin@gmail.com",
   "license": "MIT",
   "homepage": "https://github.com/carlosvin/currencies-map",
