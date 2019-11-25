@@ -1,6 +1,6 @@
 {
   "name": "currencies-map",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Map from currency codes to currency names and symbols",
   "main": "./dist/index.js",
   "types": "./dist/index.ts.d",
@@ -31,7 +31,7 @@
   },
   "scripts": {
     "build": "yarn clean && tsc --project ./tsconfig.json && yarn dist",
-    "dist": "cp *.md ./dist && cp LICENSE ./dist && cp package.json ./dist",
+    "dist": "cp *.md ./dist && cp LICENSE ./dist && cp package.json ./dist && yarn publish",
     "clean": "rm -rf ./dist",
     "test": "jest",
     "testWithCoverage": "jest --coverage"
