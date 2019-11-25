@@ -30,7 +30,8 @@
     "typescript": "^3.7.2"
   },
   "scripts": {
-    "build": "yarn clean && tsc --project ./tsconfig.json && yarn dist",
+    "build": "yarn clean && tsc",
+    "prepare": "yarn build",
     "dist": "cp *.md ./dist && cp LICENSE ./dist && cp package.json ./dist && yarn publish",
     "clean": "rm -rf ./dist",
     "test": "jest",

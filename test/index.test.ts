@@ -1,4 +1,4 @@
-import { Currencies } from './index';
+import { Currencies } from '../src/index';
 
 let languageGetter;
 
@@ -8,13 +8,13 @@ beforeEach(() => {
 
 test('Load names module', async () => {
     languageGetter.mockReturnValue('en-GB');
-    const {namesMap} = (await import('./names'));
+    const {namesMap} = (await import('../src/names'));
     expect(namesMap.get('THB')).toStrictEqual('Thai baht');
 });
 
 test('Load symbols module', async () => {
     languageGetter.mockReturnValue('es-ES');
-    const {symbolsMap} = (await import('./symbols'));
+    const {symbolsMap} = (await import('../src/symbols'));
     expect(symbolsMap.get('AUD')).toStrictEqual('A$');
 });
 

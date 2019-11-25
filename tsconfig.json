@@ -6,8 +6,6 @@
         "target": "es6", 
         "moduleResolution": "node"
     },
-    "files": ["index.ts"],
-    "exclude": [
-        "node_modules"
-    ]
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "dist"],
 }
