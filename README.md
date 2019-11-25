@@ -72,7 +72,10 @@ When the currency doesn't have symbol it will show currency code.
 
 ## List all currency codes
 ```javascript
-import {Currencies} from 'currencies-map';
-console.info(Currencies.codes);
+import {codes} from 'currencies-map/codes';
+console.info(codes);
 ```
-
+Output
+```javascript
+["EUR", "USD", "MMK" ...]
+```
