@@ -29,7 +29,8 @@
     "typescript": "^3.7.2"
   },
   "scripts": {
-    "build": "tsc --project ./tsconfig.json",
+    "build": "yarn clean && tsc --project ./tsconfig.json",
+    "clean": "rm -rf ./dist",
     "test": "jest",
     "testWithCoverage": "jest --coverage"
   }
