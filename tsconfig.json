@@ -1,11 +1,13 @@
 {
     "compilerOptions": {
         "declaration": true,
-        "outDir": "dist",
         "sourceMap": true,
+        "forceConsistentCasingInFileNames": true,
+        "esModuleInterop": true,
+        "strict": true,
         "target": "es6", 
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "outDir": "dist",
     },
-    "include": ["src/**/*"],
-    "exclude": ["node_modules", "dist"],
+    "include": ["src"],
 }
