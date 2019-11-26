@@ -1,21 +1,19 @@
 import { Currencies } from '../src/index';
 
-let languageGetter;
+let languageGetter: any;
 
 beforeEach(() => {
     languageGetter = jest.spyOn(window.navigator, 'language', 'get')
 })
 
-test('Load names module', async () => {
+test('Load names singleton', async () => {
     languageGetter.mockReturnValue('en-GB');
-    const {namesMap} = (await import('../src/names'));
-    expect(namesMap.get('THB')).toStrictEqual('Thai baht');
+    expect(Currencies.names.get('THB')).toStrictEqual('Thai baht');
 });
 
-test('Load symbols module', async () => {
+test('Load symbols singleton', async () => {
     languageGetter.mockReturnValue('es-ES');
-    const {symbolsMap} = (await import('../src/symbols'));
-    expect(symbolsMap.get('AUD')).toStrictEqual('A$');
+    expect(Currencies.symbols.get('EUR')).toStrictEqual('€');
 });
 
 test('Euro symbol en-GB', () => {
