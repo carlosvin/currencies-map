@@ -7,7 +7,6 @@ const  CODES  = ["AED","AFN","ALL","AMD","ANG","AOA","ARS","AUD","AWG","AZN","BA
 class Currencies extends Map<string, string> {
 
     private static readonly RE = /(\d|,|\.)+/;
-    private static readonly NUM = Number(0);
 
     /** 
      * @param currencyDisplay Configure to show currency symbol or name 
@@ -18,10 +17,15 @@ class Currencies extends Map<string, string> {
             .sort((a, b) => a[1].localeCompare(b[1])));
     }
 
+    private static get _locales () {
+        return typeof window === 'undefined' ? undefined : [...navigator.languages];
+    }
+
     private static _format(currency: string, currencyDisplay: 'symbol' | 'name') {
-        const currencyNumber = Currencies.NUM.toLocaleString(
-            typeof window === 'undefined' ? undefined : navigator.language, 
+        const formatter = new Intl.NumberFormat(
+            Currencies._locales, 
             { style: 'currency', currencyDisplay, currency });
+        const currencyNumber = formatter.format(0);
         return currencyNumber.replace(Currencies.RE, '').trim();
     }
 
