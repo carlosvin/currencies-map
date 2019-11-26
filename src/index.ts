@@ -16,7 +16,7 @@ class Currencies extends Map<string, string> {
 
     private static _format(currency: string, currencyDisplay: 'symbol' | 'name') {
         const currencyNumber = Currencies.NUM.toLocaleString(
-            navigator ? navigator.language : undefined, 
+            typeof window === 'undefined' ? undefined : navigator.language, 
             { style: 'currency', currencyDisplay, currency });
         return currencyNumber.replace(Currencies.RE, '').trim();
     }
