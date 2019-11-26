@@ -4,9 +4,7 @@
   "description": "Map from currency codes to currency names and symbols",
   "main": "./dist/index.js",
   "types": "./dist/index.ts.d",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "author": "carlosvin@gmail.com",
   "license": "MIT",
   "homepage": "https://github.com/carlosvin/currencies-map",
@@ -32,9 +30,8 @@
   "scripts": {
     "build": "yarn clean && tsc",
     "prepare": "yarn build",
-    "dist": "cp *.md ./dist && cp LICENSE ./dist && cp package.json ./dist && yarn publish",
     "clean": "rm -rf ./dist",
     "test": "jest",
-    "testWithCoverage": "jest --coverage"
+    "test:coverage": "jest --coverage"
   }
 }
