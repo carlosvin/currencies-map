@@ -4,9 +4,7 @@
   "description": "Map from currency codes to currency names and symbols",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "author": "carlosvin@gmail.com",
   "license": "MIT",
   "homepage": "https://github.com/carlosvin/currencies-map",
@@ -14,6 +12,7 @@
     "type": "git",
     "url": "https://github.com/carlosvin/currencies-map"
   },
+  "directories": {"doc": "dist/doc", "test": "test"},
   "keywords": [
     "currency",
     "currencies",
@@ -27,13 +26,15 @@
     "jest": "^24.9.0",
     "terser": "^4.4.0",
     "ts-jest": "^24.2.0",
+    "typedoc": "^0.15.3",
     "typescript": "^3.7.2"
   },
   "scripts": {
-    "build": "yarn clean && tsc",
-    "prepare": "yarn build",
+    "build": "tsc",
+    "prepare": "yarn clean && yarn build && yarn doc",
     "clean": "rm -rf ./dist",
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "doc": "typedoc"
   }
 }
