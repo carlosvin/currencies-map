@@ -11,22 +11,21 @@ class Currencies extends Map<string, string> {
     /** 
      * @param currencyDisplay Configure to show currency symbol or name 
      * */
-    constructor(currencyDisplay: 'symbol' | 'name') {
+    constructor(currencyDisplay: 'symbol' | 'name', locales?: string[]) {
         super(CODES
-            .map<[string, string]>(c => [c, Currencies._format(c, currencyDisplay)])
+            .map<[string, string]>(c => [c, Currencies._format(c, currencyDisplay, locales)])
             .sort((a, b) => a[1].localeCompare(b[1])));
     }
 
-    private static get _locales () {
-        return typeof window === 'undefined' ? undefined : [...navigator.languages];
+    private static _format(currency: string, currencyDisplay: 'symbol' | 'name', locales?: string[]) {
+        const formatter = new Intl.NumberFormat(
+            locales, 
+            { style: 'currency', currencyDisplay, currency });
+        return Currencies._extract(formatter);
     }
 
-    private static _format(currency: string, currencyDisplay: 'symbol' | 'name') {
-        const formatter = new Intl.NumberFormat(
-            Currencies._locales, 
-            { style: 'currency', currencyDisplay, currency });
-        const currencyNumber = formatter.format(0);
-        return currencyNumber.replace(Currencies.RE, '').trim();
+    private static _extract(formatter: Intl.NumberFormat){
+        return formatter.format(0).replace(Currencies.RE, '').trim();
     }
 
     private static _names: Currencies;
