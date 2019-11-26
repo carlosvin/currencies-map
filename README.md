@@ -27,14 +27,13 @@ npm install currencies-map
 
 # Using it
 ```javascript
-import currencyNames from 'currencies-map/names';
-import currencySymbols from 'currencies-map/symbols';
+import {Currencies} from 'currencies-map';
 ```
 
 ## Getting currency name
 ```javascript
 const currencyCode = 'EUR';
-console.info(currencyCode + ': ' + currencyNames.get(currencyCode));
+console.info(currencyCode + ': ' + Currencies.names.get(currencyCode));
 ```
 Output (device language es-ES)
 ```javascript
@@ -44,7 +43,7 @@ Output (device language es-ES)
 ## Getting currency symbol
 ```javascript
 const currencyCode = 'EUR';
-console.info(currencyCode + ': ' + currencySymbols.get(currencyCode));
+console.info(currencyCode + ': ' + Currencies.symbols.get(currencyCode));
 ```
 Output
 ```javascript
@@ -53,7 +52,7 @@ Output
 
 ## List all names
 ```javascript
-console.info([...currenciesNames.values()]);
+console.info([...Currencies.names.values()]);
 ```
 Output (device language es-ES)
 ```javascript
@@ -62,7 +61,7 @@ Output (device language es-ES)
 
 ## List all symbols
 ```javascript
-console.info([...currenciesSymbols.values()]);
+console.info([...Currencies.symbols.values()]);
 ```
 Output
 ```javascript
@@ -72,8 +71,8 @@ When the currency doesn't have symbol it will show currency code.
 
 ## List all currency codes
 ```javascript
-import {codes} from 'currencies-map/codes';
-console.info(codes);
+import {CODES} from 'currencies-map';
+console.info(CODES);
 ```
 Output
 ```javascript
