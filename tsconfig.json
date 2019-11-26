@@ -3,10 +3,11 @@
         "declaration": true,
         "sourceMap": true,
         "forceConsistentCasingInFileNames": true,
-        "esModuleInterop": true,
         "strict": true,
         "target": "es6", 
         "moduleResolution": "node",
+        "module": "commonjs",
+        "esModuleInterop": true,
         "outDir": "dist",
         "rootDir": "src"
     },
