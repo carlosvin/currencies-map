@@ -1,5 +1,5 @@
 /** List with currency ISO codes */
-const  CODES  = ["BDT", "EUR", "XOF", "BGN", "BAM", "BBD", "XPF", "BMD", "BND", "BOB", "BHD", "BIF", "BTN", "JMD", "BWP", "WST", "BRL", "BSD", "BYR", "BZD", "RUB", "RWF", "RSD", "USD", "TMT", "TJS", "RON", "NZD", "GTQ", "GBP", "XAF", "JPY", "GYD", "GEL", "GNF", "GMD", "GIP", "GHS", "OMR", "TND", "JOD", "HRK", "HTG", "HUF", "HKD", "HNL", "AUD", "VEF", "NOK", "PYG", "IQD", "PAB", "PGK", "PEN", "PKR", "PHP", "PLN", "ZMK", "EGP", "ZAR", "VND", "SBD", "ETB", "SOS", "ZWL", "SAR", "ERN", "MDL", "MGA", "MAD", "UZS", "MMK", "MOP", "MNT", "MKD", "MUR", "MWK", "MVR", "XCD", "MRO", "UGX", "TZS", "MYR", "MXN", "ILS", "SHP", "FJD", "FKP", "DKK", "NIO", "NAD", "VUV", "NGN", "NPR", "CHF", "COP", "CNY", "CLP", "CAD", "CDF", "CZK", "CRC", "ANG", "CVE", "CUP", "SZL", "SYP", "KGS", "KES", "SSP", "SRD", "KHR", "KMF", "STD", "KRW", "KPW", "KWD", "SLL", "SCR", "KZT", "KYD", "SGD", "SEK", "SDG", "DOP", "DJF", "YER", "DZD", "UYU", "LBP", "LAK", "TWD", "TTD", "TRY", "LKR", "TOP", "LTL", "LRD", "LSL", "THB", "LYD", "AED", "AFN", "ISK", "IRR", "AMD", "ALL", "AOA", "ARS", "AWG", "INR", "AZN", "IDR", "UAH", "QAR", "MZN"];
+const  CODES  = ["AED","AFN","ALL","AMD","ANG","AOA","ARS","AUD","AWG","AZN","BAM","BBD","BDT","BGN","BHD","BIF","BMD","BND","BOB","BRL","BSD","BTN","BWP","BYR","BZD","CAD","CDF","CHF","CLP","CNY","COP","CRC","CUP","CVE","CZK","DJF","DKK","DOP","DZD","EGP","ERN","ETB","EUR","FJD","FKP","GBP","GEL","GHS","GIP","GMD","GNF","GTQ","GYD","HKD","HNL","HRK","HTG","HUF","IDR","ILS","INR","IQD","IRR","ISK","JMD","JOD","JPY","KES","KGS","KHR","KMF","KPW","KRW","KWD","KYD","KZT","LAK","LBP","LKR","LRD","LSL","LTL","LYD","MAD","MDL","MGA","MKD","MMK","MNT","MOP","MRO","MUR","MVR","MWK","MXN","MYR","MZN","NAD","NGN","NIO","NOK","NPR","NZD","OMR","PAB","PEN","PGK","PHP","PKR","PLN","PYG","QAR","RON","RSD","RUB","RWF","SAR","SBD","SCR","SDG","SEK","SGD","SHP","SLL","SOS","SRD","SSP","STD","SYP","SZL","THB","TJS","TMT","TND","TOP","TRY","TTD","TWD","TZS","UAH","UGX","USD","UYU","UZS","VEF","VND","VUV","WST","XAF","XCD","XOF","XPF","YER","ZAR","ZMK","ZWL"];
 
 class Currencies extends Map<string, string> {
 
@@ -10,8 +10,9 @@ class Currencies extends Map<string, string> {
      * @param currencyDisplay Configure to show currency symbol or name 
      * */
     constructor(currencyDisplay: 'symbol' | 'name') {
-        super();
-        CODES.forEach(c => this.set(c, Currencies._format(c, currencyDisplay)));
+        super(CODES
+            .map<[string, string]>(c => [c, Currencies._format(c, currencyDisplay)])
+            .sort((a, b) => a[1].localeCompare(b[1])));
     }
 
     private static _format(currency: string, currencyDisplay: 'symbol' | 'name') {
