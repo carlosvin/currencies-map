@@ -45,8 +45,9 @@ typings/
 # Optional eslint cache
 .eslintcache
 
-# Optional parcel cache
+# Optional bundlers cache
 .parcel-cache
+.cache
 
 # Optional REPL history
 .node_repl_history

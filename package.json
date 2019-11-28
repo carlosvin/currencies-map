@@ -18,6 +18,7 @@
     "doc": "dist/doc",
     "test": "test"
   },
+  "sideEffects": false,
   "keywords": [
     "currency",
     "currencies",
@@ -31,11 +32,15 @@
     "jest": "^24.9.0",
     "terser": "^4.4.0",
     "ts-jest": "^24.2.0",
+    "ts-loader": "^6.2.1",
     "typedoc": "^0.15.3",
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.2",
+    "webpack-cli": "^3.3.10",
+    "webpack": "^4.41.2"
   },
   "scripts": {
-    "build": "tsc",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
     "prepare": "yarn clean && yarn build && yarn doc",
     "clean": "rm -rf ./dist",
     "test": "jest",

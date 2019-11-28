@@ -1,4 +1,5 @@
 import { Currencies } from '../src/index';
+import { DEFAULTS } from '../src/constants';
 
 let languageGetter: any;
 
@@ -6,6 +7,14 @@ beforeEach(() => {
     languageGetter = jest.spyOn(window.navigator, 'languages', 'get');
     languageGetter.mockReturnValue(['es-ES']);    
 })
+
+
+
+test('Constants', () => {
+    console.log(Object.values(DEFAULTS));
+    
+});
+
 
 test('Load names singleton', async () => {
     expect(Currencies.names.get('THB')).toStrictEqual('Thai baht');
@@ -17,8 +26,7 @@ test('Load symbols singleton', async () => {
 
 test('Euro symbol en-GB', () => {
     languageGetter.mockReturnValue();
-    const cs = new Currencies('symbol', ['es-ES']);
-    expect(cs.get('EUR')).toStrictEqual('€');
+    expect(Currencies.names.get('EUR')).toStrictEqual('€');
 });
 
 test('Myanmar kyats name es-ES', () => {
