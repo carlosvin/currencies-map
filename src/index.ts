@@ -17,6 +17,22 @@ class Currencies extends Map<string, string> {
             .sort((a, b) => a[1].localeCompare(b[1])));
     }
 
+    /**
+     * If currency value is equal to currency code it will use entries. 
+     * E.g: MMK -> Myanmar Kiats is not available in Intl.NumberFormat for Android so you will get "MMK" value instead of "Myanmar Kiats". If you want to set default values for this case, you can load them using this method: loadDefaults([['MMK', 'A value to show']]).
+     * @param defaults Pairs from currency code to currency value (symbol or name).
+     * @returns current instance
+     */
+    loadDefaults(defaults: Iterable<[string, string]>) {
+        for (const [code, defaultValue] of defaults) {
+            const value = this.get(code);
+            if (!value || value === code) {
+                this.set(code, defaultValue);
+            }
+        }
+        return this;
+    }
+
     private static _format(currency: string, currencyDisplay: 'symbol' | 'name', locales?: string[]) {
         const formatter = new Intl.NumberFormat(
             locales, 
@@ -31,9 +47,9 @@ class Currencies extends Map<string, string> {
     private static _names: Currencies;
 
     /** 
-     * @returns singleton instance of @see{Currency} map from currency codes to localized currency names
+     * @returns singleton instance of @see{Currencies} map from currency codes to localized currency names
      */
-    static get names () : Currencies {
+    static get names (): Currencies {
         if (!this._names) {
             this._names = new Currencies('name');
         }
@@ -43,9 +59,9 @@ class Currencies extends Map<string, string> {
     private static _symbols: Currencies;
 
     /** 
-     * @returns singleton instance of @see{Currency} map from currency codes to localized currency symbols
+     * @returns singleton instance of @see{Currencies} map from currency codes to localized currency symbols
      */
-    static get symbols () : Currencies {
+    static get symbols (): Currencies {
         if (!this._symbols) {
             this._symbols = new Currencies('symbol');
         }
