@@ -4,6 +4,8 @@
   "description": "Map from currency codes to currency names and symbols",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "source": "src/index.ts",
+  "module": "dist/module.js",
   "files": [
     "dist"
   ],
@@ -27,19 +29,21 @@
     "internationalization"
   ],
   "devDependencies": {
-    "@types/jest": "^24.0.23",
-    "jest": "^24.9.0",
-    "terser": "^4.4.0",
-    "ts-jest": "^24.2.0",
-    "typedoc": "^0.15.3",
-    "typescript": "^3.7.2"
+    "@parcel/packager-ts": "^2.2.1",
+    "@parcel/transformer-typescript-types": "^2.2.1",
+    "@types/jest": "^27.4.0",
+    "jest": "^27.4.7",
+    "parcel": "^2.2.1",
+    "ts-jest": "^27.1.3",
+    "typedoc": "^0.22.11",
+    "typescript": "^4.5.5"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "parcel build",
     "prepare": "yarn clean && yarn build && yarn doc",
     "clean": "rm -rf ./dist",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "doc": "typedoc"
+    "doc": "typedoc src"
   }
 }

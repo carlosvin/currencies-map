@@ -13,7 +13,6 @@
     },
     "include": ["src"],
     "typedocOptions": {
-        "mode": "modules",
         "out": "dist/doc"
     }
 }
