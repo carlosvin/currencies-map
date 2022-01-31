@@ -43,12 +43,12 @@ test('ARS name and symbol es-AR', () => {
 
 test('Load all names', () => {
     const observed = [...new Currencies('name', ['es-ES']).values()];
-    expect(observed).toStrictEqual(currencyNames);
+    expect(observed).toMatchSnapshot();
 });
 
 test('Load all symbols', () => {
     const observed = [...new Currencies('symbol', ['es-ES']).values()];
-    expect(observed).toStrictEqual(currencySymbols);
+    expect(observed).toMatchSnapshot();
 });
 
 test('Load defaults', () => {
@@ -56,8 +56,3 @@ test('Load defaults', () => {
     expect(observed.get('YYY')).toBe('YYY value');
     expect(observed.get('EUR')).toBe('euros');
 });
-
-
-const currencySymbols = ["฿","₫","€","AED","AFN","ALL","AMD","ANG","AOA","ARS","AUD","AWG","AZN","BAM","BBD","BDT","BGN","BHD","BIF","BMD","BND","BOB","BRL","BSD","BTN","BWP","BYN","BYR","BZD","CA$","CDF","CFPF","CHF","CLP","CNY","COP","CRC","CUP","CVE","CZK","DJF","DKK","DOP","DZD","EGP","ERN","ETB","FJD","FKP","GBP","GEL","GHS","GIP","GMD","GNF","GTQ","GYD","HKD","HNL","HRK","HTG","HUF","IDR","ILS","INR","IQD","IRR","ISK","JMD","JOD","JPY","KES","KGS","KHR","KMF","KPW","KRW","KWD","KYD","KZT","LAK","LBP","LKR","LRD","LSL","LTL","LYD","MAD","MDL","MGA","MKD","MMK","MNT","MOP","MUR","MVR","MWK","MXN","MYR","MZN","NAD","NGN","NIO","NOK","NPR","NZD","OMR","PAB","PEN","PGK","PHP","PKR","PLN","PYG","QAR","RON","RSD","RUB","RWF","SAR","SBD","SCR","SDG","SEK","SGD","SHP","SLL","SOS","SRD","SSP","STN","SYP","SZL","TJS","TMT","TND","TOP","TRY","TTD","TWD","TZS","UAH","UGX","US$","UYU","UZS","VUV","WST","XAF","XAG","XAU","XCD","XOF","YER","ZAR","ZMK","ZMW", "ZWL"];
-
-const currencyNames = ["afganis","ariaris","balboas panameños","bats","bires","bolivianos","cedis","chelines kenianos","chelines somalíes","chelines tanzanos","chelines ugandeses","colones costarricenses","córdobas nicaragüenses","coronas checas","coronas danesas","coronas islandesas","coronas noruegas","coronas suecas","dalasis","dinares argelinos","dinares bahreiníes","dinares iraquíes","dinares jordanos","dinares kuwaitíes","dinares libios","dinares macedonios","dinares serbios","dinares tunecinos","dírhams de los Emiratos Árabes Unidos","dírhams marroquíes","dobras","dólar zimbabuense","dólares australianos","dólares bahameños","dólares barbadenses","dólares beliceños","dólares bruneanos","dólares canadienses","dólares de Bermudas","dólares de las Islas Caimán","dólares de Trinidad y Tobago","dólares del Caribe Oriental","dólares estadounidenses","dólares fiyianos","dólares guyaneses","dólares hongkoneses","dólares jamaicanos","dólares liberianos","dólares namibios","dólares neozelandeses","dólares salomonenses","dólares singapurenses","dólares surinameses","dongs","drams","escudos de Cabo Verde","eslotis","euros","florines arubeños","florines de las Antillas Neerlandesas","forintos húngaros","francos burundeses","francos CFA de África Central","francos CFA de África Occidental","francos CFP","francos comorenses","francos congoleños","francos guineanos","francos ruandeses","francos suizos","francos yibutianos","gourdes haitianos","grivnas","guaraníes paraguayos","gultrums","kiats","kinas","kips","kuachas malauís","kuachas zambianos","kuanzas","kunas","kwachas zambianos (1968–2012)","laris","lei moldavos","lei rumanos","lekes","lempiras hondureños","leonas","levas búlgaras","libras de Santa Elena","libras egipcias","libras esterlinas","libras gibraltareñas","libras libanesas","libras malvinenses","libras sirias","libras sudanesas","libras sursudanesas","lilangenis","liras turcas","litas lituanas","loti lesothense","manat azerbaiyanos","manat turcomanos","marcos convertibles de Bosnia y Herzegovina","meticales","nairas","nakfas","nuevos dólares taiwaneses","nuevos séqueles israelíes","oro","paangas","patacas de Macao","pesos argentinos","pesos chilenos","pesos colombianos","pesos cubanos","pesos dominicanos","pesos filipinos","pesos mexicanos","pesos uruguayos","plata","pulas","quetzales guatemaltecos","rands","reales brasileños","riales cataríes","riales iraníes","riales omaníes","riales saudíes","riales yemeníes","rieles","ringits","rublos bielorrusos","rublos bielorrusos (2000–2016)","rublos rusos","rufiyas","rupias esrilanquesas","rupias indias","rupias indonesias","rupias mauricianas","rupias nepalíes","rupias pakistaníes","rupias seychellenses","soles peruanos","somonis tayikos","soms","sums","takas","talas","tenges kazakos","tugriks","vatus","wons norcoreanos","wons surcoreanos","yenes","yuanes"];
