@@ -18,6 +18,6 @@ jobs:
           node-version: 17
           registry-url: https://registry.npmjs.org/
       - run: yarn install
-      - run: yarn publish
+      - run: yarn publish --new-version ${{ github.ref_name }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
