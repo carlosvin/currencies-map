@@ -17,6 +17,9 @@ jobs:
           node-version: 17
           registry-url: https://registry.npmjs.org/
       - run: yarn install
+      - uses: fregante/setup-git-token@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn publish --new-version ${{ github.event.release.tag_name }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
